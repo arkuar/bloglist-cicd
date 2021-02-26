@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       SECRET: ${{ secrets.SECRET }}
-      TEST_MONGODB_URI: ${{ MONGODB_URI }}
+      TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
