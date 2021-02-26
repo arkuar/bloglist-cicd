@@ -22,6 +22,10 @@ app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 app.use(middleware.errorHandler)
 
 module.exports = app
