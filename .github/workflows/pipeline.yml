@@ -11,6 +11,9 @@ on:
 jobs:
   deployment_pipeline:
     runs-on: ubuntu-18.04
+    env:
+      SECRET: ${{ secrets.SECRET }}
+      TEST_MONGODB_URI: ${{ MONGODB_URI }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -24,4 +27,3 @@ jobs:
         run: npm run build
       - name: test
         run: npm test
-      
